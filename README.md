@@ -1,0 +1,1 @@
+# inversify-ioc-typescrip
