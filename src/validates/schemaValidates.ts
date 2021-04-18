@@ -6,7 +6,7 @@ export const userSchema = Joi.object({
     name: Joi.string(),
 });
 
-export const validateSchema = (schema: Joi.ObjectSchema, type?: string): any => {
+export const schemaValidate = (schema: Joi.ObjectSchema, type?: string): any => {
     return (req: express.Request, res: express.Response, next: express.NextFunction) => {
         let data: any = null;
         switch (type) {
