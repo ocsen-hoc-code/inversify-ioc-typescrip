@@ -47,6 +47,10 @@
         "src/interfaces/*",
         "dist/interfaces/*"
       ],
+      "@validates/*": [
+        "src/validates/*",
+        "dist/validates/*"
+      ],
       "@root/*": [
         "./*"
       ],

@@ -1,8 +1,9 @@
 import IlogService from "@interfaces/IlogService";
 import { inject } from "inversify";
 import { httpGet, controller } from 'inversify-express-utils';
-import TYPES from "@constants/types";
-
+import TYPES from "@constants/Types";
+import { validateSchema, userSchema } from '@validates/schemaValidates';
+import { REQUEST_TYPES } from "@src/constants/Consts";
 @controller('/')
 export class HelloWorldController {
   private logServ: IlogService;
@@ -10,7 +11,7 @@ export class HelloWorldController {
     this.logServ = logServ;
   }
 
-  @httpGet('/')
+  @httpGet('/', validateSchema(userSchema,REQUEST_TYPES.QUERY))
   public hello(): string {
     return this.logServ.showLog("Hello Typescript");
   }

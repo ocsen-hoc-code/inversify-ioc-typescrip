@@ -1,6 +1,6 @@
 import { Container } from "inversify";
-import TYPES from "@constants/types";
-import LogService from "@services/logService";
+import TYPES from "@constants/Types";
+import LogService from "@services/LogService";
 import IlogService from "@interfaces/IlogService";
 import { HelloWorldController } from "@controllers/HelloWorldController";
 

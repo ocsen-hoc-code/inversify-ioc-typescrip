@@ -1,5 +1,7 @@
 enum TYPES {
+  DATABASE = 'DATABASE',
   LOG_SERVICE = "LOG_SERVICE",
+  USER_SERVICE = "USER_SERVICE",
 }
 
 export default TYPES;
