@@ -1,9 +1,10 @@
 import cluster from 'cluster';
 import os from 'os';
-import app from '@src/app';
+import createServer from '@src/server';
 import dotenv from 'dotenv';
 
 dotenv.config();
+const hostname = process.env.HOSTNAME || '0.0.0.0';
 const port = process.env.PORT || 8888;
 const numCPUs = os.cpus().length;
 
@@ -18,9 +19,7 @@ if (cluster.isMaster) {
         console.log(`worker ${worker.process.pid} died - code ${code} - signal ${signal}`);
     });
 } else {
-    // Run api
-    app.listen(port, () => {
-        console.log(`Server started on port ${port}`);
-    });
+    // Run api\
+    createServer(hostname, (typeof port == 'string' ? parseInt(port) : port), process.pid);
     console.log(`Worker ${process.pid} started`);
 }
