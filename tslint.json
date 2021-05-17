@@ -8,7 +8,8 @@
     "object-literal-sort-keys": false,
     "no-var-requires": true,
     "no-empty": true,
-    "no-debugger": true
+    "no-debugger": true,
+    "radix": false
   },
   "rulesDirectory": []
 }

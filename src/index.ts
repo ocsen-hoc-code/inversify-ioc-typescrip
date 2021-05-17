@@ -19,7 +19,7 @@ if (cluster.isMaster) {
         console.log(`worker ${worker.process.pid} died - code ${code} - signal ${signal}`);
     });
 } else {
-    // Run api\
-    createServer(hostname, (typeof port == 'string' ? parseInt(port) : port), process.pid);
+    // Run api
+    createServer(hostname, (typeof port === 'string' ? parseInt(port) : port), process.pid);
     console.log(`Worker ${process.pid} started`);
 }
